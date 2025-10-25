@@ -4,7 +4,12 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+            string FirstName = "Mahdi";
+            string LastName = "Beyg Babaei";
+            Console.WriteLine($"Hello, {FirstName} \n {LastName}!");
+
+            Console.ReadLine();
         }
     }
 }
