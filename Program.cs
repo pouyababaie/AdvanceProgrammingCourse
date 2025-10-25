@@ -7,25 +7,20 @@
             Console.Clear();
 
 
-            Console.WriteLine("Rectangle Area Calculator \n");
+            Console.WriteLine("Circle Area Calculator \n");
 
-            Console.WriteLine("Eneter the X Axis ");
-            string XAxis = Console.ReadLine();
+            Console.WriteLine("Eneter the Radius \n");
+            string radius = Console.ReadLine();
 
-            Console.WriteLine("Eneter the Y Axis ");
-            string YAxis = Console.ReadLine();
-
-            bool isNumber = int.TryParse(XAxis, out int value) && int.TryParse(YAxis, out int value2);
+            bool isNumber = int.TryParse(radius, out int value);
 
 
-            int XAxisNumber = int.Parse(XAxis);
-
-            int YAxisNumber = int.Parse(YAxis);
+            int radiusNumber = int.Parse(radius);
 
             if (isNumber)
             {
-                Console.WriteLine($"The Area of the Rectangle is : {XAxisNumber * YAxisNumber}");
-                Console.WriteLine($"The Perimeter of the Rectangle is : {2 * (XAxisNumber + YAxisNumber)}");
+                Console.WriteLine($"The Area of the Circle is : {Math.PI * (Math.Pow(radiusNumber,2))}");
+                Console.WriteLine($"The Circunference is : {2 * (Math.PI) * radiusNumber}");
 
             }
 
