@@ -7,23 +7,27 @@
             Console.Clear();
 
             Console.WriteLine("Eneter the Centigerad Number \n");
-            string centigerad = Console.ReadLine();
+            string input = Console.ReadLine();
 
+            int inputNumber = int.Parse(input);
 
-            bool isNumber = double.TryParse(centigerad, out double value);
-
-
-
-            if (isNumber)
-            {
-                double centigeradNumber = double.Parse(centigerad);
-
-                Console.WriteLine($"The Average of the inputs is : {(centigeradNumber * 1.8) + 32}");
-
-            }
+            Console.WriteLine($"The Reveresed Number is : {reverseNumWithwhile(inputNumber)}" );
 
             Console.ReadLine();
         }
 
+        public static int reverseNumWithwhile(int number)
+        {
+            int reverse = 0;
+            while (number > 0)
+            {
+                int mod = number % 10;
+                reverse *= 10;
+                reverse += mod;
+
+                number /= 10;
+            }
+            return reverse;
+        }
     }
 }
