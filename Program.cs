@@ -6,21 +6,25 @@
         {
             Console.Clear();
 
+            Console.WriteLine("Eneter the First Number \n");
+            string first = Console.ReadLine();
 
-            Console.WriteLine("Circle Area Calculator \n");
+            Console.WriteLine("Eneter the Second Number \n");
+            string second = Console.ReadLine();
 
-            Console.WriteLine("Eneter the Radius \n");
-            string radius = Console.ReadLine();
+            Console.WriteLine("Eneter the Third Number \n");
+            string third = Console.ReadLine();
 
-            bool isNumber = int.TryParse(radius, out int value);
+            bool isNumber = int.TryParse(first, out int value) && int.TryParse(second, out int value2) && int.TryParse(third, out int value3);
 
 
-            int radiusNumber = int.Parse(radius);
 
             if (isNumber)
             {
-                Console.WriteLine($"The Area of the Circle is : {Math.PI * (Math.Pow(radiusNumber,2))}");
-                Console.WriteLine($"The Circunference is : {2 * (Math.PI) * radiusNumber}");
+                int firstNumber = int.Parse(first);
+                int secondNumber = int.Parse(second);
+                int thirdNumber = int.Parse(third);
+                Console.WriteLine($"The Average of the inputs is : {(firstNumber + secondNumber + thirdNumber) / 3}");
 
             }
 
