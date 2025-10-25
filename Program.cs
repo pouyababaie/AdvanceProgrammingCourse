@@ -5,11 +5,17 @@
         static void Main(string[] args)
         {
 
-            string FirstName = "Mahdi";
-            string LastName = "Beyg Babaei";
-            Console.WriteLine($"Hello, {FirstName} \n {LastName}!");
+
+            Console.WriteLine($"Enter a text :");
+
+            string input = Console.ReadLine();
+
+            Console.WriteLine($"This is the entered Text {input}");
+
 
             Console.ReadLine();
+
+
         }
     }
 }
