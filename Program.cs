@@ -6,32 +6,15 @@
         {
             Console.Clear();
 
-            Console.WriteLine("Eneter the product price \n");
-            string price = Console.ReadLine();
+            Console.WriteLine("Enter a Value for X");
+            string x = Console.ReadLine();
+            Console.WriteLine("Enter a Value for Y");
+            string y = Console.ReadLine();
 
-            Console.WriteLine("Eneter the product discount (empty is equal to 15 %) \n");
-            string discount = Console.ReadLine();
-
-            int priceNumber = int.Parse(price);
-
-            int discountNumber = 0;
-
-            if (discount == string.Empty) { discountNumber = 15; } else { discountNumber = int.Parse(discount); }
-
-            Console.WriteLine("Calculated Price with the given discount is : \n");
-            Console.WriteLine(CalculateDiscount(priceNumber, discountNumber));
-
-
-        }
-
-
-
-        public static int CalculateDiscount(int itemPrice, int discountPercent = 15)
-        {
-
-            int discountvalue = (discountPercent * itemPrice) / 100;
-
-            return itemPrice - discountvalue;
+            int number1 = int.Parse(x);
+            int number2 = int.Parse(y);
+            int result = (number1 << 0) + (number2 >> 0);
+            Console.WriteLine($"Result: \n {result}");
         }
 
     }
