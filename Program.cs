@@ -6,86 +6,32 @@
         {
             Console.Clear();
 
-            Console.WriteLine("Eneter a Number \n");
-            string input1 = Console.ReadLine();
+            Console.WriteLine("Eneter the product price \n");
+            string price = Console.ReadLine();
 
-            Console.WriteLine("Eneter a Number \n");
-            string input2 = Console.ReadLine();
+            Console.WriteLine("Eneter the product discount (empty is equal to 15 %) \n");
+            string discount = Console.ReadLine();
 
-            int input1Number = int.Parse(input1);
+            int priceNumber = int.Parse(price);
 
-            int input2Number = int.Parse(input2);
+            int discountNumber = 0;
 
+            if (discount == string.Empty) { discountNumber = 15; } else { discountNumber = int.Parse(discount); }
 
-            Console.WriteLine("Wich Operator are you using ?");
-            Console.WriteLine("1) Change Variable With Temporary Variable");
-            Console.WriteLine("2) Change Variable With XOR");
-            Console.WriteLine("3) Change Variable With Arithmetic");
-            Console.WriteLine("4) Change Variable With Tupple Swap");
+            Console.WriteLine("Calculated Price with the given discount is : \n");
+            Console.WriteLine(CalculateDiscount(priceNumber, discountNumber));
 
 
-            string choice = Console.ReadLine();
-
-            switch (choice)
-            {
-                case "1":
-                    ChangeVariableWithTempVariable(input1Number, input2Number);
-                    break;
-
-                case "2":
-                    ChangeVariableWithXOR(input1Number, input2Number);
-
-                    break;
-
-                case "3":
-                    ChangeVariableWithArithmetic(input1Number, input2Number);
-                    break;
-
-                case "4":
-                    ChangeVariableWithTupleSwap(input1Number, input2Number);
-                    break;
-            }
         }
 
 
 
-        public static void ChangeVariableWithTempVariable(int a, int b)
-        {
-            int temp = a;
-            a = b;
-            b = temp;
-
-            Console.WriteLine($"Value of the A : {a} \n");
-            Console.WriteLine($"Value of the B : {b}");
-        }
-
-        public static void ChangeVariableWithXOR(int a, int b)
-        {
-            a = a + b;
-            b = a - b;
-            a = a - b;
-
-            Console.WriteLine($"Value of the A : {a} \n");
-            Console.WriteLine($"Value of the B : {b}");
-        }
-
-        public static void ChangeVariableWithArithmetic(int a, int b)
+        public static int CalculateDiscount(int itemPrice, int discountPercent = 15)
         {
 
-            a = a ^ b;
-            b = a ^ b;
-            a = a ^ b;
+            int discountvalue = (discountPercent * itemPrice) / 100;
 
-            Console.WriteLine($"Value of the A : {a} \n");
-            Console.WriteLine($"Value of the B : {b}");
-        }
-
-        public static void ChangeVariableWithTupleSwap(int a, int b)
-        {
-            (a, b) = (b, a);
-
-            Console.WriteLine($"Value of the A : {a} \n");
-            Console.WriteLine($"Value of the B : {b}");
+            return itemPrice - discountvalue;
         }
 
     }
