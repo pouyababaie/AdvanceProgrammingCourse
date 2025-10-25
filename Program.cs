@@ -21,6 +21,7 @@
             Console.WriteLine("1) Change Variable With Temporary Variable");
             Console.WriteLine("2) Change Variable With XOR");
             Console.WriteLine("3) Change Variable With Arithmetic");
+            Console.WriteLine("4) Change Variable With Tupple Swap");
 
 
             string choice = Console.ReadLine();
@@ -38,6 +39,10 @@
 
                 case "3":
                     ChangeVariableWithArithmetic(input1Number, input2Number);
+                    break;
+
+                case "4":
+                    ChangeVariableWithTupleSwap(input1Number, input2Number);
                     break;
             }
         }
@@ -70,6 +75,14 @@
             a = a ^ b;
             b = a ^ b;
             a = a ^ b;
+
+            Console.WriteLine($"Value of the A : {a} \n");
+            Console.WriteLine($"Value of the B : {b}");
+        }
+
+        public static void ChangeVariableWithTupleSwap(int a, int b)
+        {
+            (a, b) = (b, a);
 
             Console.WriteLine($"Value of the A : {a} \n");
             Console.WriteLine($"Value of the B : {b}");
