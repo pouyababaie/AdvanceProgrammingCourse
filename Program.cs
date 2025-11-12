@@ -96,6 +96,7 @@ public class Program
                     ShowSumOfListElements();
                     break;
                 case "12":
+                    ShowAverage();
                     break;
 
                 case "0":
@@ -118,7 +119,7 @@ public class Program
 
     static void AddNumberToList()
     {
-        Console.Clear();
+        Reset();
 
         Console.WriteLine($"Enter a value \n ");
 
@@ -132,18 +133,18 @@ public class Program
             Console.Clear();
 
             Console.WriteLine($"The item {input} has been added to the list");
-            Exit = true;
 
-            ShowMenu();
 
         }
+        ShowMenu();
 
     }
 
     static void SearchInList()
     {
 
-        Console.Clear();
+        Reset();
+
         Console.WriteLine($"Enter a value \n ");
 
         string searchTerm = Console.ReadLine();
@@ -163,9 +164,6 @@ public class Program
             }
         }
 
-        Console.Clear();
-
-        Exit = true;
         ShowMenu();
 
 
@@ -174,15 +172,8 @@ public class Program
 
     static void ShowList()
     {
-        Console.Clear();
+        Reset();
 
-        if (List.Count == 0)
-        {
-            Console.WriteLine("The List is empty");
-
-            Exit = true;
-            ShowMenu();
-        }
         Console.WriteLine("The List is :");
 
         List.ForEach(x =>
@@ -196,7 +187,8 @@ public class Program
 
     static void RemoveFromList()
     {
-        Console.Clear();
+        Reset();
+
 
         Console.WriteLine($"Enter a value \n ");
 
@@ -216,9 +208,7 @@ public class Program
 
     static void ShowLargestNumber()
     {
-        Console.Clear();
-
-        if (List.Count == 0) { Console.WriteLine("The list is empty"); return; }
+        Reset();
 
         Console.WriteLine($"The first option is using LINQ .MAX() method \n {List.Max()}");
 
@@ -241,9 +231,7 @@ public class Program
 
     static void ShowSmallestNumber()
     {
-        Console.Clear();
-
-        if (List.Count == 0) { Console.WriteLine("The list is empty"); return; }
+        Reset();
 
         Console.WriteLine($"The first option is using LINQ .MIN() method \n {List.Min()}");
 
@@ -266,9 +254,8 @@ public class Program
 
     static void ShowListCount()
     {
-        Console.Clear();
+        Reset();
 
-        if (List.Count == 0) { Console.WriteLine("The List is empty"); return; }
         Console.WriteLine($"The items in the list are this many : \n {List.Count}");
 
         ShowMenu();
@@ -276,9 +263,7 @@ public class Program
 
     static void SortList()
     {
-        Console.Clear();
-
-        if (List.Count == 0) { Console.WriteLine("The List is empty"); return; }
+        Reset();
 
         Console.WriteLine("Sorted list : \n");
 
@@ -295,13 +280,7 @@ public class Program
 
     static void ShowItemsBetweenTwoElement()
     {
-        Console.Clear();
-
-        if (List.Count == 0)
-        {
-            Console.WriteLine("The list is empty");
-            return;
-        }
+        Reset();
 
         Console.WriteLine("Enter the first number (min value):");
         string searchTerm = Console.ReadLine();
@@ -351,13 +330,7 @@ public class Program
 
     static void ReplaceValueByIndex()
     {
-        Console.Clear();
-
-        if (List.Count == 0)
-        {
-            Console.WriteLine("The list is empty");
-            return;
-        }
+        Reset();
 
         Console.WriteLine("Enter the number (index):");
         string searchTerm = Console.ReadLine();
@@ -399,11 +372,7 @@ public class Program
 
     static void ShowSumOfListElements()
     {
-
-
-        Console.Clear();
-
-        if (List.Count == 0) { Console.WriteLine("The list is empty"); return; }
+        Reset();
 
         Console.WriteLine($"The sum by the LINQ method .SUM() is : \n  {List.Sum()}");
 
@@ -421,9 +390,7 @@ public class Program
 
     static void ShowAverage()
     {
-        Console.Clear();
-
-        if (List.Count == 0) { Console.WriteLine("The list is empty"); return; }
+        Reset();
 
         int average = 0;
         int sum = 0;
@@ -438,6 +405,15 @@ public class Program
 
 
         ShowMenu();
+    }
+
+
+    static void Reset()
+    {
+        Console.Clear();
+        if (List.Count == 0) { Console.WriteLine("The list is empty"); return; }
+
+
     }
 
 
