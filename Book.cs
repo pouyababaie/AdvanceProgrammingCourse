@@ -2,6 +2,7 @@
 
 internal class Book
 {
+    public int Id { get; private set; } = Random.Shared.Next(1, 1000);
     public string Title { get; set; }
     public string Author { get; set; }
     public string ISBN { get; set; }
